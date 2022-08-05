@@ -30,6 +30,7 @@
             height: 30px;
             margin-right: 5px;
             filter: invert(67%) sepia(70%) saturate(507%) hue-rotate(9deg) brightness(88%) contrast(90%);
+            pointer-events: none;
         }
     }
 }
