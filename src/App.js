@@ -1,23 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import './App.scss';
+import CurrencyForm from './components/CurrencyForm/CurrencyForm';
+import Layout from './components/Layout/Layout';
+import Loader from './components/UI/Loader/Loader';
+import { getExchangeRates } from './API/index';
 
 function App() {
+
+  const [loader, setLoader] = useState(true)
+  const [data, setData] = useState([])
+  const [table, setTable] = useState({
+    USD: 0,
+    EUR: 0,
+    time: 0
+  })
+
+  const setTableData = (USD, EUR) => {
+    setTable({
+      ...table, 
+      USD: USD.rates["UAH"].toFixed(2), 
+      EUR: EUR.rates["UAH"].toFixed(2),
+      time: EUR.date
+    })
+  }
+
+  useEffect(() => {
+    getExchangeRates(setData, setTableData, setLoader)
+    // eslint-disable-next-line
+  }, [])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {
+        loader ? 
+        <Loader /> : 
+        <Layout table={table}>
+          <CurrencyForm data={data} />
+        </Layout>
+      }
     </div>
   );
 }

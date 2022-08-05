@@ -1,0 +1,46 @@
+.header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px 0;
+    color: white;
+    background-color: #1b1b28;
+
+    &__table {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        & > p {
+            padding: 5px 0;
+        }
+
+        & > h3 {
+            padding-bottom: 10px;
+        }
+    }
+
+    &__title {
+        display: flex;
+        align-items: center;
+
+        & > img {
+            width: 30px;
+            height: 30px;
+            margin-right: 5px;
+            filter: invert(67%) sepia(70%) saturate(507%) hue-rotate(9deg) brightness(88%) contrast(90%);
+        }
+    }
+}
+
+@media screen and (max-width: 565px) {
+    .header {
+        display: inline-block;
+
+        &__title {
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+    }
+}
