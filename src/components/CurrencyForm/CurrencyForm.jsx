@@ -69,7 +69,7 @@ const CurrencyForm = ({ data }) => {
                 />
             </div>
             <img className={animation ? `${classes.form__swap} ${classes.animate}` : `${classes.form__swap}`} src={swap} onClick={toggleSwapCurrencies} alt="swap" />
-            <p className={classes.form__addit}>1 {firstCurrency} = {exchangeRate.toFixed(2)} {secondCurrency}</p>
+            <p className={classes.form__addit}>1 {firstCurrency} = {exchangeRate.toFixed(3)} {secondCurrency}</p>
         </div>
     );
 };
