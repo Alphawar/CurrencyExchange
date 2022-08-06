@@ -10,6 +10,7 @@
         outline: none;
         border: 1px solid #1b1b28;
         border-radius: 5px;
+        overflow: hidden;
     }
 
     &__select {
@@ -21,4 +22,14 @@
         border-radius: 5px;
         cursor: pointer;
     }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0; 
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
 }
