@@ -54,18 +54,18 @@ const CurrencyForm = ({ data }) => {
             <p className={classes.form__desc}>Check the current rates of various currencies!</p>
             <div className={classes.form__items}>
                 <CurrencyItem 
-                    data={data}
-                    selectedCurrency={firstCurrency}
-                    handleChangeCurrency={e => setFirstCurrency(e.target.value)}
-                    handleChangeAmount={handleChangeFromAmount}
-                    amount={amountFrom}
+                  data={data}
+                  selectedCurrency={firstCurrency}
+                  handleChangeCurrency={e => setFirstCurrency(e.target.value)}
+                  handleChangeAmount={handleChangeFromAmount}
+                  amount={amountFrom}
                 />
                 <CurrencyItem
-                    selectedCurrency={secondCurrency} 
-                    data={data}
-                    handleChangeCurrency={e => setSecondCurrency(e.target.value)}
-                    handleChangeAmount={handleChangeToAmount}
-                    amount={amountTo}
+                  selectedCurrency={secondCurrency} 
+                  data={data}
+                  handleChangeCurrency={e => setSecondCurrency(e.target.value)}
+                  handleChangeAmount={handleChangeToAmount}
+                  amount={amountTo}
                 />
             </div>
             <img className={animation ? `${classes.form__swap} ${classes.animate}` : `${classes.form__swap}`} src={swap} onClick={toggleSwapCurrencies} alt="swap" />
